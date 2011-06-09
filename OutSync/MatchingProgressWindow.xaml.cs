@@ -130,6 +130,13 @@ namespace OutSync
                     if (Properties.Settings.Default.ExclusionList.Contains(contact.OutlookId))
                     {
                         contact.IsIncludedInSync = false;
+                    } 
+                    else {
+                        Outlook.ContactItem outlookContact = _mainWnd._outlookHelper.FindContactByEntryID(contact.OutlookId);
+                        if (outlookContact.HasPicture)
+                        {
+                            contact.IsIncludedInSync = false;
+                        }
                     }
 
                     _mainWnd._matchedContacts.Add(contact);
