@@ -1,0 +1,136 @@
+﻿<Window
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:uc="clr-namespace:OutSync.UserControls"
+  x:Class="OutSync.MainWindow"
+  Title="OutSync"
+  WindowStartupLocation="CenterScreen"
+  ResizeMode="CanResizeWithGrip"
+  Loaded="Window_Loaded"
+  Closing="Window_Closing"
+  SourceInitialized="Window_SourceInitialized"
+  Icon="App.ico"
+  Width="640"
+  Height="450"
+  MinWidth="600"
+  MinHeight="450"
+    >
+
+  <Window.Resources>
+    <Style x:Key="ListBoxTitleStyle"
+           TargetType="{x:Type Label}">
+      <Setter Property="FontSize"
+              Value="14" />
+      <Setter Property="FontWeight"
+              Value="Bold" />
+      <Setter Property="Foreground"
+              Value="Gray" />
+    </Style>
+
+    <Style x:Key="ListBoxSubTitleStyle"
+           TargetType="{x:Type TextBlock}">
+      <Setter Property="FontSize"
+              Value="12" />
+      <Setter Property="Foreground"
+              Value="Gray" />
+    </Style>
+
+    <!-- this is the brush used as background for the main content area (non-glass region) -->
+    <LinearGradientBrush
+      x:Name="backgroundBrush"
+      x:Key="backgroundBrush"
+      StartPoint="0,0"
+      EndPoint="0,1">
+      <GradientStop Offset="0"
+                    Color="White" />
+      <GradientStop Offset="1"
+                    Color="LightGray" />
+    </LinearGradientBrush>
+  </Window.Resources>
+  <DockPanel x:Name="uberPanel">
+    <uc:LogoHeaderUserControl DockPanel.Dock="Top"
+                              x:Name="LogoHeader" />
+
+    <StackPanel x:Name="toolbarPanel"
+                Orientation="Horizontal"
+                DockPanel.Dock="Bottom"
+                HorizontalAlignment="Center">
+      <Button Width="100"
+              Click="syncButton_Click"
+              Style="{StaticResource DefaultButtonStyle}"
+              Margin="0,5,5,10"
+              IsDefault="True"
+              x:Name="syncButton">_Sync</Button>
+      <Button Width="100"
+              Click="toolsButton_Click"
+              Style="{StaticResource ButtonStyle}"
+              Margin="0,5,5,10"
+              ContextMenuOpening="toolsButtonContextMenuOpening"
+              x:Name="toolsButton"
+              Content="Tools">
+        <Button.ContextMenu>
+          <ContextMenu >
+            <MenuItem Header="_Settings" Click="settings_Click"/>
+            <MenuItem Header="_Check for Update" Click="checkForUpdate_Click"/>
+            <Separator></Separator>
+            <MenuItem Header="_Remove All Pictures" Click="removePictures_Click"/>
+          </ContextMenu>
+        </Button.ContextMenu>
+      </Button>
+      <Button Width="100" Click="exitButton_Click" 
+              Style="{StaticResource ButtonStyle}"
+              Margin="0,5,0,10">E_xit</Button>
+    </StackPanel>
+
+    <Grid x:Name="contentGrid">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+
+      <StackPanel Orientation="Vertical"
+                  Grid.Row="0"
+                  Grid.Column="0">
+        <Label Style="{StaticResource ListBoxTitleStyle}"
+               x:Name="matchedContactsLabel" />
+
+        <TextBlock TextWrapping="Wrap"
+                   Margin="5,0,5,5"
+                   Style="{StaticResource ListBoxSubTitleStyle}">
+          Your Facebook friends found in Outlook. Uncheck those you don't want to sync
+          (check <Hyperlink x:Name="checkAllHyperlink"
+              Click="hyperlink_Click">all</Hyperlink>/<Hyperlink x:Name="checkNoneHyperlink"
+                     Click="hyperlink_Click">none</Hyperlink>).
+        </TextBlock>
+      </StackPanel>
+
+      <uc:ContactsListBoxUserControl x:Name="matchedContactsListBox"
+                                     Grid.Row="1"
+                                     Grid.Column="0"
+                                     Margin="5,0,5,5" />
+
+      <StackPanel Orientation="Vertical"
+                  Grid.Row="0"
+                  Grid.Column="1">
+        <Label Margin="-6,0,0,0"
+               Style="{StaticResource ListBoxTitleStyle}"
+               x:Name="unmatchedContactsLabel" />
+
+        <TextBlock TextWrapping="Wrap"
+                   Margin="0,0,5,5"
+                   Style="{StaticResource ListBoxSubTitleStyle}">
+          The rest of your Facebook friends. These will simply be ignored, and won't be added to Outlook.
+        </TextBlock>
+      </StackPanel>
+      <uc:ContactsListBoxUserControl x:Name="unmatchedContactsListBox"
+                                     Grid.Row="1"
+                                     Grid.Column="1"
+                                     Margin="0,0,5,5" />
+    </Grid>
+  </DockPanel>
+</Window>

@@ -1,0 +1,75 @@
+<UserControl x:Class="OutSync.UserControls.ContactHeaderUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    DataContextChanged="dataContextChanged"
+  >
+  <UserControl.Resources>
+    <Style x:Key="contactNameStyle" TargetType="{x:Type Label}">
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="FontWeight" Value="Bold" />
+      <Setter Property="Foreground" Value="#3B59BB" />
+    </Style>
+
+    <Style x:Key="contactNetworksStyle" TargetType="{x:Type Label}">
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="FontWeight" Value="Regular" />
+      <Setter Property="Foreground" Value="Gray" />
+    </Style>
+  </UserControl.Resources>
+
+  <Grid x:Name="grid1">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition MinWidth="175" />
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <DockPanel Grid.Column="0">
+
+      <CheckBox
+        Margin="5,0,7,0"
+        x:Name="checkBox1"
+        Visibility="Collapsed"
+        DockPanel.Dock="Left"
+        VerticalAlignment="Center">
+        <CheckBox.IsChecked>
+          <Binding Path="IsIncludedInSync" />
+        </CheckBox.IsChecked>
+      </CheckBox>
+
+      <Image
+          x:Name="image1"
+          Margin="0,5,2,5"
+          Width="75"
+          Height="75"
+          Stretch="UniformToFill"
+          VerticalAlignment="Top"
+          Source="{Binding PictureUrl}" />
+    </DockPanel>
+
+    <StackPanel Orientation="Vertical" Grid.Column="1">
+      <Label
+          Content="{Binding Name}"
+          Style="{StaticResource contactNameStyle}"
+          Height="Auto" />
+
+      <Label
+          Content="{Binding Networks}"
+          Style="{StaticResource contactNetworksStyle}"
+          Margin="0,-5,0,0" />
+    </StackPanel>
+
+    <Line Grid.Row="1" Grid.ColumnSpan="2"
+          X1="0"
+          X2="{Binding ElementName=grid1,Path=ActualWidth}"
+          Y1="1"
+          Y2="1"
+          Style="{StaticResource LineStyle}"
+          />
+
+  </Grid>
+</UserControl>

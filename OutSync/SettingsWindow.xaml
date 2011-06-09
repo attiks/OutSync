@@ -1,0 +1,56 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="OutSync.SettingsWindow"
+    Title="Settings"
+    Width="350" Height="250"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    Icon="App.ico"
+    Loaded="Window_Loaded"
+    >
+  
+  <Grid>
+    <DockPanel>
+      <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+        <Button Style="{StaticResource DefaultButtonStyle}" IsDefault="True" Width="60" Click="ok_Click">OK</Button>
+        <Button Style="{StaticResource ButtonStyle}" IsCancel="True" Width="60" Margin="5,0,0,0">Cancel</Button>
+      </StackPanel>
+
+      <StackPanel Orientation="Vertical" x:Name="settingsPanel">
+
+        <GroupBox Header="General" Margin="10">
+          <StackPanel Orientation="Vertical">
+            <CheckBox Content="_Automatically check for updates" x:Name="autoUpdateCheckBox" Margin="5">
+              <CheckBox.IsChecked>
+                <Binding Path="AutoCheckUpdate" Mode="TwoWay" UpdateSourceTrigger="Explicit" />
+              </CheckBox.IsChecked>
+            </CheckBox>
+
+            <CheckBox Content="Use Aero _Glass on Vista (requires restart)" x:Name="aeroGlassCheckBox" Margin="5">
+              <CheckBox.IsChecked>
+                <Binding Path="UseAeroGlass" Mode="TwoWay" UpdateSourceTrigger="Explicit" />
+              </CheckBox.IsChecked>
+            </CheckBox>
+          </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Outlook Properties to Update" Margin="10,0,10,10">
+          <StackPanel Orientation="Vertical">
+            <CheckBox Content="_Picture" x:Name="updatePictureCheckBox" Margin="5">
+              <CheckBox.IsChecked>
+                <Binding Path="UpdatePicture" Mode="TwoWay" UpdateSourceTrigger="Explicit" />
+              </CheckBox.IsChecked>
+            </CheckBox>
+
+            <CheckBox Content="_Birthday (coming soon)" IsEnabled="False" x:Name="updateBirthdayCheckBox" Margin="5">
+              <CheckBox.IsChecked>
+                <Binding Path="UpdateBirthday" Mode="TwoWay" UpdateSourceTrigger="Explicit" />
+              </CheckBox.IsChecked>
+            </CheckBox>
+          </StackPanel>
+        </GroupBox>
+      </StackPanel>
+    </DockPanel>
+  </Grid>
+</Window>

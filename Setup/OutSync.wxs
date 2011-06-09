@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Product Id='*'
+      Name='OutSync'
+      Version='1.0.100.0'
+      Manufacturer='Mel Sampat'
+      Language='1033'
+      UpgradeCode='98C398E1-DFBA-4a4c-8D72-F27415507CBF'>
+
+    <Package
+      InstallerVersion='200'
+      Compressed='yes'
+      Manufacturer="Mel Sampat"
+      Keywords="Installer,MSI,Database"
+      Platforms="Intel"
+      Languages="1033"
+      SummaryCodepage="1252"/>
+
+    <PropertyRef Id="NETFRAMEWORK30"/>
+    <!---->
+    <Condition Message="This application requires the .NET Framework v3.0 or higher. Visit http://go.microsoft.com/fwlink/?LinkId=124150 to get it.">
+      Installed OR NETFRAMEWORK30
+    </Condition>
+
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id="ProgramMenuFolder" />
+      <Directory Id='ProgramFilesFolder'>
+        <Directory Id='INSTALLDIR' Name='OutSync' FileSource='.\Redist'>
+
+          <Component Id="APPFILES" Guid="D76C6772-DA41-4d05-9EB2-00D69325C23B" >
+
+            <File Id="FILE1" Name="OutSync.exe" Vital="yes">
+              <Shortcut Id="MainExeShortcut"
+                        Directory="ProgramMenuFolder"
+                        Name="OutSync"
+                        WorkingDirectory="INSTALLDIR"
+                        Description="Synchronize your Outlook contacts with Facebook."
+                        IconIndex="0" 
+                        Advertise="yes"
+                        />
+            </File>
+
+            <File Id="FILE2" Name="EULA.RTF"/>
+            <File Id="FILE3" Name="OutSync.exe.config"/>
+            <File Id="FILE4" Name="Facebook.dll"/>
+            <File Id="FILE5" Name="Microsoft.Xml.Schema.Linq.dll"/>
+
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Media Id="1" Cabinet="Setup.cab" EmbedCab="yes" CompressionLevel="high" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+    <UIRef Id="WixUI_InstallDir" />
+
+    <WixVariable Id="WixUILicenseRtf" Value=".\Redist\EULA.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value=".\Bitmaps\bannrbmp.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value=".\Bitmaps\dlgbmp.bmp" />
+
+    <Feature Id='DefaultFeature' Level='1' ConfigurableDirectory='TARGETDIR' AllowAdvertise='no'>
+      <ComponentRef Id='APPFILES'/>
+    </Feature>
+  </Product>
+</Wix>

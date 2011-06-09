@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>facebook.web</name>
+    </assembly>
+    <members>
+        <member name="P:facebook.web.CanvasFBMLMasterPage.RequireLogin">
+            <summary>
+            Determines whether or not the page being displayed requires that the user be logged into
+            the application before viewing the page. If this is true, and the user is not logged in,
+            they will be redirected to the login/allow access page. The default is false.
+            
+            This property must be set before the Page_Init method is called. To set it in a content page
+            of this master page, set it in that page's Page_PreInit method.
+            </summary>
+        </member>
+        <member name="T:facebook.web.FriendList">
+            <summary>
+            FriendList web control to show a list of friends for a given user
+            </summary>
+        </member>
+        <member name="M:facebook.web.FriendList.RaisePostBackEvent(System.String)">
+            <summary>
+            Called when a Postback occurs.
+            </summary>
+            <param name="eventArgument">The userID of the friend that was clicked.</param>
+        </member>
+        <member name="M:facebook.web.FriendList.OnLoad(System.EventArgs)">
+            <summary>
+            Called each time the control is loaded.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:facebook.web.FriendList.LoadFromViewState">
+            <summary>
+            Loads the Facebook FriendList from ViewState.  This is used to pull back data during a Postback operation.
+            </summary>
+        </member>
+        <member name="M:facebook.web.FriendList.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            RenderContents is called by the ASP.Net framework when our control needs to render itself.  Here we
+            will simply output our resulting HTML.
+            </summary>
+            <param name="output">The writer to which we will write our HTML</param>
+        </member>
+        <member name="P:facebook.web.FriendList.UseViewState">
+            <summary>
+            A flag indicating whether the control should store its state in ViewState.  By default this is
+            set to True.  If this is set to False, the host page needs to take care of keeping track of state
+            and setting the UserProfile control's User Property with each Postback. 
+            </summary>
+        </member>
+        <member name="P:facebook.web.FriendList.Friends">
+            <summary>
+            The collection of friends that we'll show
+            </summary>
+        </member>
+        <member name="T:facebook.web.FriendListItemClickEventArgs">
+            <summary>
+            Custom event args class used when we throw our OnClick event.
+            </summary>
+        </member>
+        <member name="M:facebook.web.BasePageHelper.GetCanvasURL(System.Web.HttpRequest)">
+            <summary>
+            Converts the relative part of the URL being requested into a relative URL that can be called from the canvas page,
+            taking into account whether or not the application is actually in a subdirectory of the web application.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:facebook.web.UserProfile">
+            <summary>
+            UserProfile web control to show the details of a user
+            </summary>
+        </member>
+        <member name="M:facebook.web.UserProfile.OnLoad(System.EventArgs)">
+            <summary>
+            Called each time the control is loaded.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:facebook.web.UserProfile.LoadFromViewState">
+            <summary>
+            Loads the Facebook User from ViewState.  This is used to pull back data during a Postback operation.
+            </summary>
+        </member>
+        <member name="M:facebook.web.UserProfile.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            RenderContents is called by the ASP.Net framework when our control needs to render itself.  Here we
+            will simply output our resulting HTML.
+            </summary>
+            <param name="output">The writer to which we will write our HTML</param>
+        </member>
+        <member name="M:facebook.web.UserProfile.WriteUserData(System.Web.UI.HtmlTextWriter,System.String,System.String)">
+            <summary>
+            Write a section of name/value pairs in HTML 
+            </summary>
+            <param name="output">The writer to write the HTML to.</param>
+            <param name="labelText">The label to write</param>
+            <param name="dataText">The data to write</param>
+        </member>
+        <member name="P:facebook.web.UserProfile.User">
+            <summary>
+            The Facebook User that will be shown on the control.
+            </summary>
+        </member>
+        <member name="P:facebook.web.UserProfile.UseViewState">
+            <summary>
+            A flag indicating whether the control should store its state in ViewState.  By default this is
+            set to True.  If this is set to False, the host page needs to take care of keeping track of state
+            and setting the UserProfile control's User Property with each Postback. 
+            </summary>
+        </member>
+        <member name="T:facebook.web.PhotoAlbum">
+            <summary>
+            PhotoAlbum web control to show the user's photo albums and let them browser through the pictures.
+            </summary>
+        </member>
+        <member name="M:facebook.web.PhotoAlbum.RaisePostBackEvent(System.String)">
+            <summary>
+            Called when a Postback occurs.
+            </summary>
+            <param name="eventArgument">An indicator that starts with "album" followed by the album ID that
+            the user selected from the drop down, or the string "previous" or "next" in the case where the 
+            user clicked one of the navigation links.</param>
+        </member>
+        <member name="M:facebook.web.PhotoAlbum.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            RenderContents is called by the ASP.Net framework when our control needs to render itself.  Here we
+            will simply output our resulting HTML.
+            </summary>
+            <param name="output">The writer to which we will write our HTML</param>
+        </member>
+        <member name="M:facebook.web.PhotoAlbum.OnLoad(System.EventArgs)">
+            <summary>
+            Called each time the control is loaded.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:facebook.web.PhotoAlbum.LoadFromViewState">
+            <summary>
+            Loads the data from ViewState.  This is used to pull back data during a Postback operation.
+            </summary>
+        </member>
+        <member name="M:facebook.web.PhotoAlbum.LoadAlbums">
+            <summary>
+            Loads the albums for the Facebook User.
+            </summary>
+        </member>
+        <member name="M:facebook.web.PhotoAlbum.LoadAlbums(facebook.API,System.Int32)">
+            <summary>
+            Loads the albums for the Facebook User.
+            </summary>
+        </member>
+        <member name="M:facebook.web.PhotoAlbum.GetImageUri(System.Int32)">
+            <summary>
+            Extracts the photos URI for a given Facebook photo.
+            </summary>
+            <param name="index">The index of the photo to load.</param>
+            <returns>the string representation of the URI to the photo.</returns>
+        </member>
+        <member name="M:facebook.web.PhotoAlbum.GetSelectedAlbum">
+            <summary>
+            Returns the current photo album
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:facebook.web.PhotoAlbum.UseViewState">
+            <summary>
+            A flag indicating whether the control should store its state in ViewState.  By default this is
+            set to True.  If this is set to False, the host page needs to take care of keeping track of state
+            and setting the UserProfile control's User Property with each Postback. 
+            </summary>
+        </member>
+        <member name="P:facebook.web.PhotoAlbum.FacebookAPI">
+            <summary>
+            An insance of the Facebook API.  We use this to look up the albums and photos. 
+            </summary>
+        </member>
+        <member name="P:facebook.web.PhotoAlbum.UserId">
+            <summary>
+            The UserId for the account whose photo albums we're browsing.
+            </summary>
+        </member>
+        <member name="P:facebook.web.CanvasFBMLBasePage.RequireLogin">
+            <summary>
+            Determines whether or not the page being displayed requires that the user be logged into
+            the application before viewing the page. If this is true, and the user is not logged in,
+            they will be redirected to the login/allow access page. The default is false.
+            
+            This property must be set before the Page_Init method is called on this class. To set it in
+            the page that inherits from this class, set it in that page's Page_Init method.
+            </summary>
+        </member>
+    </members>
+</doc>

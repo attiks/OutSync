@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>facebook.desktop</name>
+    </assembly>
+    <members>
+        <member name="F:facebook.desktop.BaseControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.BaseControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.BaseControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:facebook.desktop.PhotoAlbum.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.PhotoAlbum.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.PhotoAlbum.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:facebook.desktop.ProfileListItem.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.ProfileListItem.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.ProfileListItem.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:facebook.desktop.FriendList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.FriendList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.FriendList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:facebook.desktop.InviteeList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.InviteeList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.InviteeList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:facebook.desktop.EventList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.EventList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.EventList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:facebook.desktop.FriendMap.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.FriendMap.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.FriendMap.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:facebook.desktop.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.lblDescription">
+            <summary>
+              Looks up a localized string similar to Description.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.lblEmployer">
+            <summary>
+              Looks up a localized string similar to Employer.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.lblEventCount">
+            <summary>
+              Looks up a localized string similar to You have {0} upcoming event{1}..
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.lblFriendCount">
+            <summary>
+              Looks up a localized string similar to You have {0} friend{1}..
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.lblInvitees">
+            <summary>
+              Looks up a localized string similar to {0} has {1} invited facebook user{2}.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.lblLocation">
+            <summary>
+              Looks up a localized string similar to Location.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.lblPosition">
+            <summary>
+              Looks up a localized string similar to Position.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.lblTimePeriod">
+            <summary>
+              Looks up a localized string similar to Time Period.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Properties.Resources.MapPage">
+             <summary>
+               Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+            &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &gt;
+            &lt;head&gt;
+                &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+                &lt;style type=&quot;text/css&quot;&gt;
+                    .nameClass
+                    {
+                        font-family:verdana;
+                        color:blue;
+                    }
+                    .addressClass
+                    {
+                        font-family:verdana;
+                        color:green;
+                    }
+                &lt;/style&gt;
+                
+                &lt; [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="T:facebook.desktop.Profile">
+            <summary>
+            A control to display a user's profile.
+            </summary>
+        </member>
+        <member name="F:facebook.desktop.Profile.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.Profile.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.Profile.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:facebook.desktop.Profile.User">
+            <summary>
+            The user to display in the control.
+            </summary>
+        </member>
+        <member name="F:facebook.desktop.EventListItem.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:facebook.desktop.EventListItem.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:facebook.desktop.EventListItem.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
