@@ -13,6 +13,7 @@ namespace OutSync
         string _name;
         string _networks;
         string _status;
+        string _dob;
 
         Uri _pictureUrl;
         bool _isMatched;
@@ -36,6 +37,14 @@ namespace OutSync
         //        return _facebookId;
         //    }
         //}
+
+        public string Birthday
+        {
+            get
+            {
+                return _dob;
+            }
+        }
 
         public string Name
         {
@@ -127,6 +136,7 @@ namespace OutSync
             _name = user.name;
             _status = user.status.message;            
             _networks = String.Empty;
+            _dob = user.birthday;
 
             foreach (facebook.Schema.affiliation aff in user.affiliations.affiliation)
             {
