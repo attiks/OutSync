@@ -43,7 +43,7 @@
               </CheckBox.IsChecked>
             </CheckBox>
 
-            <CheckBox Content="_Birthday (coming soon)" IsEnabled="False" x:Name="updateBirthdayCheckBox" Margin="5">
+            <CheckBox Content="_Birthday"  x:Name="updateBirthdayCheckBox" Margin="5">
               <CheckBox.IsChecked>
                 <Binding Path="UpdateBirthday" Mode="TwoWay" UpdateSourceTrigger="Explicit" />
               </CheckBox.IsChecked>
