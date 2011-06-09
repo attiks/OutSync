@@ -72,6 +72,11 @@ namespace OutSync
 
                 if (settings.UpdateBirthday)
                 {
+                    if (contact.Birthday.Length > 0)
+                    {
+                        DateTime dob = Convert.ToDateTime(contact.Birthday);
+                        outlookContact.Birthday = dob;
+                    }
                 }
 
                 if (settings.UpdatePicture)
