@@ -13,7 +13,7 @@ namespace OutSync
         string _name;
         string _networks;
         string _status;
-        string _dob;
+        DateTime _dob;
 
         Uri _pictureUrl;
         bool _isMatched;
@@ -38,7 +38,7 @@ namespace OutSync
         //    }
         //}
 
-        public string Birthday
+        public DateTime Birthday
         {
             get
             {
@@ -136,7 +136,16 @@ namespace OutSync
             _name = user.name;
             _status = user.status.message;            
             _networks = String.Empty;
-            _dob = user.birthday;
+
+            if (user.birthday.Length > 0)
+            {
+                try
+                {
+                    DateTime dob = Convert.ToDateTime(user.birthday);
+                    _dob = dob;
+                }
+                catch { }
+            }
 
             foreach (facebook.Schema.affiliation aff in user.affiliations.affiliation)
             {
