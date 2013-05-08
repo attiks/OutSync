@@ -5,3 +5,4 @@ Changes:
 - added birthday
 - outlook contacts with a picture are deselected by default
 - LatestVersion.zip added with installler
+- ...
